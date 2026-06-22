@@ -1,12 +1,23 @@
 <?php
 
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'main-menu' => __('Menu principal', 'mota-theme'),
+            'footer-menu' => __('Menu du footer', 'mota-theme'),
+        )
+    );
+}
+
+add_action('after_setup_theme', 'register_my_menus');
+
 function mota_theme() {
 
     wp_enqueue_style(
         'mota-theme-style',
-        get_stylesheet_uri(),
+        get_stylesheet_directory_uri() . '/assets/css/theme.css',
         array(),
-        filemtime(get_stylesheet_directory() . '/style.css')
+        filemtime(get_stylesheet_directory() . '/assets/css/theme.css')
     );
 
 }

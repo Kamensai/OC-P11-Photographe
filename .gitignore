@@ -1,0 +1,12 @@
+# Dépendances Node
+node_modules/
+
+# Fichiers source map générés par Sass
+*.css.map
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
