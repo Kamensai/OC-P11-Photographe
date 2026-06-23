@@ -22,18 +22,24 @@
             >
         </a>
 
-        <nav class="site-header__nav" aria-label="Menu principal">
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'main-menu',
-                    'container'      => false,
-                    'menu_class'     => 'site-header__menu',
-                    'fallback_cb'    => false,
-                )
-            );
-            ?>
-        </nav>
+        <button class="site-header__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-header-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    <nav class="site-header__nav" id="site-header-menu" aria-label="Menu principal">
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location' => 'main-menu',
+          'container'      => false,
+          'menu_class'     => 'site-header__menu',
+          'fallback_cb'    => false,
+        )
+      );
+      ?>
+    </nav>
 
     </div>
 </header>

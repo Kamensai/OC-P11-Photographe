@@ -1,3 +1,233 @@
+/* space-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/space-mono-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* space-mono-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/space-mono-v17-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* space-mono-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/space-mono-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/poppins-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/poppins-v24-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* Colors */
+/* Breakpoints */
+* {
+  box-sizing: border-box;
+}
 
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Space Mono", monospace;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#primary {
+  flex: 1 0 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.site-header__inner {
+  max-width: 1440px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__logo-img {
+  display: block;
+  width: 216px;
+  height: auto;
+}
+
+.site-header__nav {
+  display: block;
+}
+
+.site-header__menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-header__menu a {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.site-header__menu a:hover,
+.site-header__menu a:focus {
+  color: #fe5858;
+}
+
+.site-header__burger {
+  display: none;
+  width: 28px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.site-header__burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-bottom: 6px;
+  background-color: #000000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.site-header__burger span:last-child {
+  margin-bottom: 0;
+}
+
+.site-header__burger.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.site-header__burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header__burger.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .site-header__inner {
+    height: 72px;
+    padding: 0 24px;
+  }
+  .site-header__logo-img {
+    width: 150px;
+  }
+  .site-header__burger {
+    display: block;
+  }
+  .site-header__nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background-color: #e00000;
+  }
+  .site-header__nav.is-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .site-header__menu {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .site-header__menu a {
+    font-size: 44px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+}
+.site-footer {
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border-top: 1px solid #000;
+  padding: 20px;
+}
+
+.site-footer__menu {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__menu a {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.site-footer__menu a:hover,
+.site-footer__menu a:focus {
+  color: #e00000;
+}
+
+@media screen and (max-width: 768px) {
+  .site-footer__menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}
 
 /*# sourceMappingURL=theme.css.map */
