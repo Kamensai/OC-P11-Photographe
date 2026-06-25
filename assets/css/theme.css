@@ -58,6 +58,10 @@ body {
   color: #000000;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 #primary {
   flex: 1 0 auto;
 }
@@ -227,6 +231,132 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 24px;
+  }
+}
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.contact-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.contact-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.contact-modal__content {
+  position: relative;
+  z-index: 1;
+  width: 597px;
+  max-width: calc(100vw - 40px);
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 5px solid #000000;
+  padding: 8px 80px 40px;
+  transform: translateY(120px);
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.35s ease;
+}
+
+.contact-modal.is-open .contact-modal__content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.contact-modal__title-wrapper {
+  width: calc(100% + 160px);
+  margin-left: -80px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.contact-modal__title-img {
+  display: block;
+  width: 886px;
+  max-width: none;
+  height: auto;
+  transform: translateX(-142px);
+}
+
+.contact-modal .wpcf7 {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.contact-modal label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.contact-modal input,
+.contact-modal textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #b8bbc2;
+  border-radius: 6px;
+  padding: 10px;
+  font-family: "Space Mono", monospace;
+}
+
+.contact-modal textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+.contact-modal input[type=submit] {
+  border: 0;
+  border-radius: 0;
+  background: #d8d8d8;
+  padding: 14px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-modal {
+    padding: 24px 16px;
+  }
+  .contact-modal__content {
+    width: 286px;
+    max-width: calc(100vw - 32px);
+    border-width: 3px;
+    padding: 8px 32px 28px;
+  }
+  .contact-modal__title-wrapper {
+    width: calc(100% + 64px);
+    margin-left: -32px;
+    margin-bottom: 32px;
+  }
+  .contact-modal__title-img {
+    width: 420px;
+    max-width: none;
+    transform: translateX(-67px);
+  }
+  .contact-modal .wpcf7 {
+    max-width: 100%;
+  }
+  .contact-modal textarea {
+    min-height: 130px;
   }
 }
 

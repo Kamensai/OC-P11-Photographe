@@ -18,6 +18,10 @@ body {
   color: v.$color-black;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 #primary {
   flex: 1 0 auto;
 }

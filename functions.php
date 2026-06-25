@@ -28,6 +28,14 @@ function mota_theme() {
         true
     );
 
+     wp_enqueue_script(
+        'mota-modal-contact',
+        get_stylesheet_directory_uri() . '/assets/js/modal-contact.js',
+        array(),
+        filemtime(get_stylesheet_directory() . '/assets/js/modal-contact.js'),
+        true
+    );
+
 }
 
 add_action('wp_enqueue_scripts', 'mota_theme');
