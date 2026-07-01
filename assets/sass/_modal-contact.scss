@@ -38,10 +38,10 @@
 
   width: 597px;
   max-width: calc(100vw - 40px);
-  max-height: 90vh;
 
-  overflow-y: auto;
-  overflow-x: hidden;
+  height: auto;
+  max-height: 769px;
+  overflow: hidden;
 
   box-sizing: border-box;
   background: v.$color-white;
@@ -126,9 +126,12 @@
   .contact-modal__content {
     width: 286px;
     max-width: calc(100vw - 32px);
+    max-height: 620px;
 
     border-width: 3px;
     padding: 8px 32px 28px;
+
+    overflow: hidden;
   }
 
   .contact-modal__title-wrapper {
@@ -148,6 +151,7 @@
   }
 
   .contact-modal textarea {
+    max-height: 150px;
     min-height: 130px;
   }
 }
